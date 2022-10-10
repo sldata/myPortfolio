@@ -7,18 +7,10 @@ const navItemsAnimation = document.querySelector('.nav-items-animation')
 
 const showNavigation = () =>{
     nav.classList.toggle('nav--active')
-   
     handleNavItemsAnimation()
-    hideMainNavigation()
+  
 }
 
-const hideMainNavigation =() =>{
-if(nav.classList.contains('nav--active')){
-    mainNav.style.display = "none"
-} else{
-    mainNav.style.display = "block"
-}
-}
 
 const handleNavItemsAnimation = () =>{
     let delayTime = 0
@@ -27,10 +19,7 @@ const handleNavItemsAnimation = () =>{
         item.style.animationDelay = '.' + delayTime + 's'
         delayTime++
     })
-    
-
-
-    
+      
 }
 
 

@@ -1,6 +1,5 @@
 @use './mixins' as *;
-@use './colors' as*;
-
+@use './colors' as *;
 
 *,
 *::before,
@@ -9,142 +8,144 @@
 	margin: 0;
 	padding: 0;
 }
-body{
-    background-color: $background-color;
-    scroll-behavior: smooth;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
-    
-        
+body {
+	background-color: $background-color;
+	scroll-behavior: smooth;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
 }
 
-html{
-    font-size: 62.5%;
-    
+html {
+	font-size: 62.5%;
 }
-
-
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
 // Navigation
 
-.burger-btn{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 1em;
-    background: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-    z-index:120;
-
-
-&:focus{
-    outline: none;
-    border: 1px solid rgba(255, 255, 255, .5);
-    border-radius: 8px;
-}
-&:hover{
-    .burger-btn__bars::after,
-    .burger-btn__bars::before{
-        width: 100%;
-    }
-}
-&__box{
-    position: relative;
-    width: 40px;
-    height: 30px;
-}
-&__bars,
-&__bars:after,
-&__bars:before{
-    @include burgerBtn;
-  
-}
-&__bars{
-    width: 100%;
-    &::after{
-        top: 13px;
-        width: 60%;
-    }
-    &::before{
-        top: 27px;
-        width: 30%;
-        transition-delay: .1s;
-    }
-}
-}
-.nav{
-    top: 0;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    transform: translateX(100%);
-    display: flex;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    // sliding navigation form right to left
-    transition: transform .6s cubic-bezier(0.65, 0.05, 0.36, 1);                        
-    &--active{
-        transform: translateX(0);
-    }
-    &__title{
-        display: none;
-    }
-    
-
-    &__item{
-        
-        position: relative;
-        display: block;
-        color: $main-color;
-        margin: 0.5em 0;
-        padding: 0.5em 2em;
-        text-decoration: none;
-        font-size: 2.6rem;
-        transition: color .3s;
-    //  shoving vertical bar on hover action
-    &::before{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 3px;
-        height: 100%;
-        transform: scaleY(0);
-        background-color: $main-color;
-        transition: transform .3s, color .3s;
-        content: "";
-    }
-    &:hover{
-        color: $font-color;
-    }
-    &:hover::before{
-        
-        transform: scaleY(1);
-   }
-}
-}
-@keyframes navItemsAnimation{
-    from{
-        transform: translateX(200%)
-    }
-    to{
-        transform: translateX(0);
-    }
-}
-
-.nav-items-animation{
-    animation: navItemsAnimation 1s both;
-}
-
-@media (min-width: 992px){
- .nav{
-        .nav--active{
+.burger-btn {
     display: none;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 120;
+
+	&:focus {
+		outline: none;
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-radius: 8px;
+	}
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+	&__bars,
+	&__bars:after,
+	&__bars:before {
+		@include burgerBtn;
+	}
+	&__bars {
+		width: 100%;
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+		&::before {
+			top: 27px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
+	}
+}
+
+// mobile navigation
+.nav {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	transform: translateX(100%);
+	display: flex;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+	// sliding navigation form right to left
+	transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
+	&--active {
+		transform: translateX(0);
+	}
+	&__title {
+		display: none;
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		color: $main-color;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		text-decoration: none;
+		font-size: 2.6rem;
+		transition: color 0.3s;
+		//  shoving vertical bar on hover action
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			transform: scaleY(0);
+			background-color: $main-color;
+			transition: transform 0.3s, color 0.3s;
+			content: '';
+		}
+		&:hover {
+			color: $font-color;
+		}
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-items-animation {
+	animation: navItemsAnimation 1s both;
+}
+
+
+// desktop navigation
+.navbar{
+    // display: none;
+    .nav-link{
+     color: $main-color !important;
+    }
  }
 
-}
-}
 
