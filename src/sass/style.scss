@@ -11,7 +11,7 @@
 body {
 	background-color: $background-color;
 	scroll-behavior: smooth;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
 }
 
@@ -26,9 +26,8 @@ html {
 // Navigation
 
 .burger-btn {
-    display: none;
 	position: fixed;
-	top: 20px;
+	top: 15px;
 	right: 20px;
 	padding: 1em;
 	background: none;
@@ -90,9 +89,7 @@ html {
 	&--active {
 		transform: translateX(0);
 	}
-	&__title {
-		display: none;
-	}
+	
 
 	&__item {
 		position: relative;
@@ -124,8 +121,6 @@ html {
 	}
 }
 
-
-
 @keyframes navItemsAnimation {
 	from {
 		transform: translateX(200%);
@@ -139,13 +134,88 @@ html {
 	animation: navItemsAnimation 1s both;
 }
 
-
 // desktop navigation
-.navbar{
-    // display: none;
-    .nav-link{
-     color: $main-color !important;
-    }
- }
+.navbar {
+	background-color: #ddd;
+	height: 80px;
+	width: 800px;
+	box-shadow: 0 0 30px  rgba(255, 0, 0 , 25%);
+	.navbar-nav{
+		margin-top: 0.5em;
+	}
+	.nav-link {
+		display: flex;
+		font-size: 2.4rem;
+		padding: 0 1em;
+		margin: 0 1em;
+		color: $main-color ;
+		transition: color 0.3s;
+	}
+	.nav-link:hover {
+		color: $font-color;
+	}
+	
+	
+	.navbar-brand {
+		color: $main-color;
+		transition: color 0.3s;
+		margin-left: 2em;
+		h3{
+			font-size: 2.4rem;
+			font-weight: bold;
+			margin-top: 0.5em;
+			
+			margin-left: 0.5em;	
+		}
+	}
+	.navbar-brand:hover {
+		color: $font-color;
+	}
+}
 
+
+@media (min-width: 992px) {
+	.nav{
+		&--active{
+			display: none;
+		}
+	}
+	
+	.navbar {
+		
+		display: block;
+	}
+	.navbar-brand{
+		padding: 1em 0;
+		
+	}
+	.burger-btn {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px){
+	.navbar-brand{
+		padding: .5em 0;
+		h3{
+		font-size: 2.8rem !important;
+	}	
+}
+		.nav-link{
+			font-size: 2.9rem !important;
+		}
+	
+}
+@media (min-width: 1200px){
+	.navbar-brand{
+		h3{
+		font-size: 3rem !important;
+		margin-bottom: 0.3em;
+		
+	}	
+}
+.nav-link{
+	font-size: 3rem !important;
+		}
+}
 
