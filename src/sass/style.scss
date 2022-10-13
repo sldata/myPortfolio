@@ -173,6 +173,45 @@ html {
 	}
 }
 
+// header
+
+.outside{
+	position: relative;
+	width: 380px;
+	height: 380px;
+	border: 1px solid $main-color;
+	border-radius: 50%;
+	
+	
+
+	.inside{
+		.my-photo{
+		margin-top: 4em;
+		position: absolute;
+		display: flex;
+		top: 15%;
+		left: 50%;
+		transform: translateX(-50%);
+		align-items: center;
+		object-fit: cover;
+		justify-content: center;
+		object-position: 0 0px;
+		background-size: cover;
+		width: 350px;
+		height: 350px;
+		border-radius: 50%;
+	}
+}
+
+}
+	
+
+.header__text{
+	// position: absolute;
+	display: flex;
+	top: 20px;
+}
+
 
 @media (min-width: 992px) {
 	.nav{
@@ -211,7 +250,8 @@ html {
 		h3{
 		font-size: 3rem !important;
 		margin-bottom: 0.3em;
-		
+		position: relative;
+		right: 2em;	
 	}	
 }
 .nav-link{
