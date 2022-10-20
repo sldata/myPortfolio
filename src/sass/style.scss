@@ -75,7 +75,7 @@ html {
 	top: 0;
 	position: fixed;
 	width: 100%;
-	height: 100vh;
+	height: 106vh;
 	transform: translateX(100%);
 	display: flex;
 	text-align: center;
@@ -175,64 +175,153 @@ html {
 // header
 
 .outside {
-	position: absolute;
-	top: 15%;
+	position: relative;
+	display: flex;
+	top: 150px;
+	left: 50%;
+	transform: translateX(-50%);
 	overflow: hidden;
 	width: 380px;
 	height: 380px;
-	left: 50%;
-	transform: translate(-50%);
 	border: 1px solid $main-color;
 	border-radius: 50%;
-	animation: rotate 30s infinite;
-
-	.circle {
-		background-color: red;
+	
+	
+	
+}
+.inside {
+	.my-photo {
+		margin-top: 4em;
+		position: absolute;
+		display: flex;
+		left: 50%;
+		transform: translate(-50%);
+		// align-items: center;
+		// justify-content: center;
+		object-fit: cover;
+		// justify-content: center;
+		object-position: 0 0;
+		// background-size: cover;
+		width: 250px;
+		height: 250px;
 		border-radius: 50%;
-		width: 40px;
-		height: 40px;
-		.icon {
-			width: 20px;
-			display: flex;
-			top: 50%;
-			left: 50%;
-
-			color: $main-color;
-		}
-	}
-
-	.inside {
-		.my-photo {
-			margin-top: 1.2em;
-			position: relative;
-			display: flex;
-			left: 50%;
-			transform: translate(-50%);
-			align-items: center;
-			justify-content: center;
-			object-fit: cover;
-			justify-content: center;
-			object-position: 0 0px;
-			background-size: cover;
-			width: 250px;
-			height: 250px;
-			border-radius: 50%;
-		}
 	}
 }
-
-.header__text {
-	// position: absolute;
-	display: flex;
-	top: 20px;
+	.header {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		&__title {
+			margin-top: 6em;
+			text-align: center;
+			font-weight: bold;
+			font-size: 4rem;
+		}
+		&__paragraph-one {
+			margin-top: 2em;
+			text-align: center;
+			font-size: 2rem;
+			font-weight: bold;
+		}
+		&__paragraph-two {
+			display: flex;
+			margin-top: 2em;
+			text-align: center;
+			font-size: 2rem;
+		}
+	}
+	
+	.coop-btn {
+		position: absolute;
+		height: 100px;
+		width: 200px;
+		margin-top: 2em;
+		top: 75%;
+		left: 50%;
+		transform: translate(-50%);
+		background-color: $main-color;
+		border-radius: 8px;
+		color: #ddd;
+	transition: background-color 0.3s, color 0.3s;
+	&:hover {
+		background-color: $font-color;
+		color: $main-color;
+	}
+	&__text {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 3rem;
+		text-decoration: none;
+	}
 }
 
 // Media
+
+@media (min-width: 320px){
+	
+	.nav{
+		&--active{
+			overflow: hidden;
+		}
+	}
+	.navbar-brand{
+		margin-left: 0 !important;
+	}
+
+	.outside{
+		transform: translate(-50%, -30%);
+		width: 200px;
+		height: 200px;
+	}
+	.inside{
+		.my-photo{
+		width: 150px;
+		height: 150px;
+		top: 20%;
+		transform: translate(-50%, -50%);
+	}
+}
+.header{
+	&__title{
+		font-size: 1.6rem;
+		padding: 0;
+		margin-top: 13em;
+	}
+	&__paragraph-one {
+		margin-top: 1em;
+		text-align: center;
+		font-size: 1.6rem;
+		font-weight: lighter;
+	}
+	&__paragraph-two {
+		margin-top: 0;
+		height: 100%;
+		width: 100%;
+		font-size: 1.6rem;
+		font-weight: lighter;
+		margin-bottom: 1em;
+	}
+}
+
+.coop-btn{
+	height: 50px;
+	width: 100px;
+	top: 83%;
+	margin-bottom: 0;
+	&__text{
+		font-size: 1.6rem;
+	}
+}
 
 @media (min-width: 992px) {
 	.nav {
 		&--active {
 			display: none;
+			height: 100vh;
 		}
 	}
 
@@ -247,7 +336,6 @@ html {
 	}
 	.outside {
 		display: flex;
-		margin-left: 19em;
 		width: 380px;
 		height: 380px;
 		.inside {
@@ -255,9 +343,8 @@ html {
 				position: absolute;
 				display: flex;
 				left: 50%;
-				top: 12%;
+				top: 0;
 				transform: translateX(-50%);
-
 			}
 		}
 	}
@@ -276,14 +363,19 @@ html {
 	.outside {
 		width: 480px;
 		height: 480px;
+		display: inline-block;
+		display: flex;
+		right: 10;
+		
+	
 		.inside {
 			.my-photo {
 				width: 380px;
 				height: 380px;
-				top: 47%;
-				left: 50%;
-				transform: translate(-50%,-50%);
+				top: -10px;
+				// left: 50%;
 			}
 		}
 	}
+}
 }
