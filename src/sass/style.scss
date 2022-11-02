@@ -13,6 +13,8 @@ body {
 	scroll-behavior: smooth;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
+	position: relative;
+	height: 100vh;
 }
 
 html {
@@ -177,72 +179,65 @@ html {
 .outside {
 	position: relative;
 	display: flex;
-	top: 150px;
+	top: 12em;
 	left: 50%;
 	transform: translateX(-50%);
 	overflow: hidden;
-	width: 380px;
-	height: 380px;
+	width: 280px;
+	height: 280px;
 	border: 1px solid $main-color;
 	border-radius: 50%;
-	
-	
-	
 }
 .inside {
 	.my-photo {
-		margin-top: 4em;
+		top: 3em;
 		position: absolute;
 		display: flex;
 		left: 50%;
 		transform: translate(-50%);
-		// align-items: center;
-		// justify-content: center;
 		object-fit: cover;
-		// justify-content: center;
 		object-position: 0 0;
-		// background-size: cover;
-		width: 250px;
-		height: 250px;
+		width: 200px;
+		height: 200px;
 		border-radius: 50%;
+		
 	}
 }
-	.header {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		&__title {
-			margin-top: 6em;
-			text-align: center;
-			font-weight: bold;
-			font-size: 4rem;
-		}
-		&__paragraph-one {
-			margin-top: 2em;
-			text-align: center;
-			font-size: 2rem;
-			font-weight: bold;
-		}
-		&__paragraph-two {
-			display: flex;
-			margin-top: 2em;
-			text-align: center;
-			font-size: 2rem;
-		}
+.header {
+	position: absolute;
+	top: 35em;
+	height: 0;
+	width: 100%;
+
+	&__title {
+		text-align: center;
+		font-weight: bold;
+		font-size: 2rem;
 	}
-	
-	.coop-btn {
-		position: absolute;
-		height: 100px;
-		width: 200px;
-		margin-top: 2em;
-		top: 75%;
-		left: 50%;
-		transform: translate(-50%);
-		background-color: $main-color;
-		border-radius: 8px;
-		color: #ddd;
+	&__paragraph-one {
+		
+		text-align: center;
+		font-size: 2rem;
+		font-weight: bold;
+	}
+	&__paragraph-two {
+		
+		text-align: center;
+		
+		font-size: 2rem;
+	}
+}
+
+.coop-btn {
+	position: absolute;
+	height: 100px;
+	width: 200px;
+	bottom: 5em;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: $main-color;
+	border-radius: 8px;
+	color: #ddd;
 	transition: background-color 0.3s, color 0.3s;
 	&:hover {
 		background-color: $font-color;
@@ -261,121 +256,93 @@ html {
 
 // Media
 
-@media (min-width: 320px){
-	
-	.nav{
-		&--active{
+@media (min-width: 280px) {
+	.nav {
+		&--active {
 			overflow: hidden;
 		}
 	}
-	.navbar-brand{
+	.navbar-brand {
 		margin-left: 0 !important;
 	}
 
-	.outside{
+	.outside {
 		transform: translate(-50%, -30%);
 		width: 200px;
 		height: 200px;
 	}
+	.inside {
+		.my-photo {
+			width: 150px;
+			height: 150px;
+			top: 6.4em;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.header {
+		position: absolute;
+		top: 20em;
+		height: 0;
+		width: 100%;
+		
+		&__title, &__paragraph-one, &__paragraph-two {
+			margin: 0;
+			font-size: 1.6rem;
+			position: relative;
+			top: 2em;
+		}
+		&__paragraph-one{
+			top: 3em;
+		}
+		&__paragraph-two{
+			top: 4em;	
+		}
+	}
+	.coop-btn {
+		height: 60px;
+		width: 140px;
+		bottom: 2em;
+		
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+
+@media (min-width: 768px){
+	.outside{
+		top: 17em;
+		width: 450px;
+		height: 450px;
+		}
 	.inside{
 		.my-photo{
-		width: 150px;
-		height: 150px;
-		top: 20%;
-		transform: translate(-50%, -50%);
+			width: 350px;
+			height: 350px;
+			top: 14em;
+		}
 	}
-}
-.header{
-	&__title{
-		font-size: 1.6rem;
-		padding: 0;
-		margin-top: 13em;
+	.header{
+		position: relative;
+		top: 8em;
+		&__title {
+			font-size: 3.4rem;
+		}
+		&__paragraph-one, &__paragraph-two {
+			// margin-top: 1em;
+		font-size: 2.8rem;
+		font-weight: 100;
+		}
 	}
-	&__paragraph-one {
-		margin-top: 1em;
-		text-align: center;
-		font-size: 1.6rem;
-		font-weight: lighter;
-	}
-	&__paragraph-two {
-		margin-top: 0;
-		height: 100%;
-		width: 100%;
-		font-size: 1.6rem;
-		font-weight: lighter;
-		margin-bottom: 1em;
+	.coop-btn {
+		height: 100px;
+		width: 300px;
+		bottom: 5em;
 	}
 }
 
-.coop-btn{
-	height: 50px;
-	width: 100px;
-	top: 83%;
-	margin-bottom: 0;
-	&__text{
-		font-size: 1.6rem;
-	}
-}
 
-@media (min-width: 992px) {
-	.nav {
-		&--active {
-			display: none;
-			height: 100vh;
-		}
-	}
 
-	.navbar {
-		display: block;
-	}
-	.navbar-brand {
-		padding: 1em 0;
-	}
-	.burger-btn {
-		display: none;
-	}
-	.outside {
-		display: flex;
-		width: 380px;
-		height: 380px;
-		.inside {
-			.my-photo {
-				position: absolute;
-				display: flex;
-				left: 50%;
-				top: 0;
-				transform: translateX(-50%);
-			}
-		}
-	}
-}
 
-@media (min-width: 1200px) {
-	.navbar-brand {
-		padding: 0.5em 0;
-		h3 {
-			font-size: 2.8rem !important;
-		}
-	}
-	.nav-link {
-		font-size: 2.9rem !important;
-	}
-	.outside {
-		width: 480px;
-		height: 480px;
-		display: inline-block;
-		display: flex;
-		right: 10;
-		
-	
-		.inside {
-			.my-photo {
-				width: 380px;
-				height: 380px;
-				top: -10px;
-				// left: 50%;
-			}
-		}
-	}
-}
-}
+
