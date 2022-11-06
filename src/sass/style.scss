@@ -21,9 +21,12 @@ body {
 }
 
 .wrapper {
-	margin: 0 auto;
-	max-width: 1200px;
+	position: relative;
 	width: 100%;
+	margin:0 auto ;
+	max-width: 2560px;
+	height: auto;
+	// width: 100%;
 }
 // Navigation
 
@@ -35,7 +38,7 @@ body {
 	background: none;
 	border: 1px solid transparent;
 	cursor: pointer;
-	z-index: 120;
+	z-index: 12000;
 
 	&:focus {
 		outline: none;
@@ -86,7 +89,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: $background-color;
-	z-index: 100;
+	z-index: 10;
 	// sliding navigation form right to left
 	transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
 	&--active {
@@ -101,6 +104,7 @@ body {
 		padding: 0.5em 2em;
 		text-decoration: none;
 		font-size: 2.6rem;
+		font-weight: 400;
 		transition: color 0.3s;
 		//  shoving vertical bar on hover action
 		&::before {
@@ -138,6 +142,7 @@ body {
 
 // desktop navigation
 .navbar {
+	z-index: 10;
 	background-color: #ddd;
 	height: 80px;
 	width: 800px;
@@ -219,7 +224,6 @@ body {
 	}
 	&__paragraph-two {
 		text-align: center;
-
 		font-size: 2rem;
 	}
 }
@@ -228,7 +232,7 @@ body {
 	position: absolute;
 	height: 100px;
 	width: 200px;
-	bottom: 5em;
+	bottom: 15em;
 	left: 50%;
 	transform: translate(-50%);
 	background-color: $main-color;
@@ -246,9 +250,47 @@ body {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		font-size: 3rem;
+		font-weight: 600;
+		
 		text-decoration: none;
 	}
 }
+
+
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: $pure-white;
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	top: 77em;
+	overflow: hidden;
+	&__title{
+	
+		
+		padding-bottom: 1em;
+		text-align: center;
+		
+		font-size: 4em;
+		font-weight: bold;
+	}
+	&__photo{
+		max-height: 100%;
+		max-width: 400px;
+	}
+	&__text{
+		font-family: 'Roboto', sans-serif;
+		margin-top: 2em;
+		padding: 2em;
+		font-size: 2rem;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
 
 // Media
 
@@ -305,6 +347,11 @@ body {
 			font-size: 1.8rem;
 		}
 	}
+}
+@media (min-width:320px){
+	.coop-btn {
+		bottom: 2em;
+}
 }
 
 @media (min-width: 576px) {
@@ -383,7 +430,6 @@ body {
 }
 
 @media (min-width: 992px) {
-
 	.burger-btn {
 		display: none;
 	}
@@ -391,7 +437,6 @@ body {
 		height: 100px;
 		width: 300px;
 		bottom: 5em;
-			
 	}
 }
 
@@ -416,10 +461,15 @@ body {
 		&__title {
 			font-size: 3.6rem;
 		}
-		&__paragraph-one {
-		}
 		&__paragraph-two {
 			margin-left: 2em;
 		}
+	}
+}
+
+.about{
+	top: 45em;
+	&__title{
+		top: -2em;
 	}
 }
