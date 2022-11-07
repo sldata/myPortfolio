@@ -23,10 +23,9 @@ body {
 .wrapper {
 	position: relative;
 	width: 100%;
-	margin:0 auto ;
+	margin: 0 auto;
 	max-width: 2560px;
 	height: auto;
-	// width: 100%;
 }
 // Navigation
 
@@ -91,7 +90,7 @@ body {
 	background-color: $background-color;
 	z-index: 10;
 	// sliding navigation form right to left
-	transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
+	transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1) both;
 	&--active {
 		transform: translateX(0);
 	}
@@ -185,7 +184,7 @@ body {
 	position: relative;
 	top: 12em;
 	left: 50%;
-	transform: translateX(-0%);
+	transform: translateX(-50%);
 	overflow: hidden;
 	width: 280px;
 	height: 280px;
@@ -232,12 +231,13 @@ body {
 	position: absolute;
 	height: 100px;
 	width: 200px;
-	bottom: 15em;
+	top: 54em;
 	left: 50%;
 	transform: translate(-50%);
 	background-color: $main-color;
 	border-radius: 8px;
 	color: #ddd;
+	cursor: pointer;
 	transition: background-color 0.3s, color 0.3s;
 	&:hover {
 		background-color: $font-color;
@@ -250,13 +250,11 @@ body {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		font-size: 3rem;
-		font-weight: 600;
-		
 		text-decoration: none;
 	}
 }
 
-
+//  ABOUT SECTION
 .about {
 	display: flex;
 	justify-content: center;
@@ -268,166 +266,187 @@ body {
 	position: absolute;
 	top: 77em;
 	overflow: hidden;
-	&__title{
-	
-		
+	&__title {
 		padding-bottom: 1em;
 		text-align: center;
-		
-		font-size: 4em;
+		font-size: 3em;
 		font-weight: bold;
 	}
-	&__photo{
+	&__photo {
 		max-height: 100%;
 		max-width: 400px;
 	}
-	&__text{
+	&__text {
 		font-family: 'Roboto', sans-serif;
-		margin-top: 2em;
+		margin: 0 2em;
 		padding: 2em;
 		font-size: 2rem;
 		font-weight: bold;
 		text-align: left;
 	}
+	.cv-btn {
+		position: absolute;
+		height: 100px;
+		width: 200px;
+		top: 80em;
+		left: 50%;
+		transform: translate(-50%);
+		background-color: $main-color;
+		border-radius: 8px;
+		color: #ddd;
+		transition: background-color 0.3s, color 0.3s;
+		&:hover {
+			background-color: $font-color;
+			color: $main-color;
+		}
+		&__text {
+			display: flex;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 3rem;
+			text-decoration: none;
+		}
+	}
 }
-
 
 // Media
 
-@media (min-width: 280px) {
-	.nav {
-		&--active {
-			overflow: hidden;
-		}
-	}
-	.navbar-brand {
-		margin-left: 0 !important;
-	}
+// @media (min-width: 280px) {
+// 	.nav {
+// 		&--active {
+// 			overflow: hidden;
+// 		}
+// 	}
+// 	.navbar-brand {
+// 		margin-left: 0 !important;
+// 	}
 
-	.outside {
-		transform: translate(-50%, -30%);
-		width: 200px;
-		height: 200px;
-	}
-	.inside {
-		.my-photo {
-			width: 150px;
-			height: 150px;
-			top: 6.4em;
-			transform: translate(-50%, -50%);
-		}
-	}
-	.header {
-		position: absolute;
-		top: 20em;
-		height: 0;
-		width: 100%;
+// 	.outside {
+// 		transform: translate(-50%, -30%);
+// 		width: 200px;
+// 		height: 200px;
+// 	}
+// 	.inside {
+// 		.my-photo {
+// 			width: 150px;
+// 			height: 150px;
+// 			top: 6.4em;
+// 			transform: translate(-50%, -50%);
+// 		}
+// 	}
+// 	.header {
+// 		position: absolute;
+// 		top: 20em;
+// 		height: 0;
+// 		width: 100%;
 
-		&__title,
-		&__paragraph-one,
-		&__paragraph-two {
-			margin: 0;
-			font-size: 1.6rem;
-			position: relative;
-			top: 2em;
-		}
-		&__paragraph-one {
-			top: 3em;
-		}
-		&__paragraph-two {
-			top: 4em;
-		}
-	}
-	.coop-btn {
-		height: 60px;
-		width: 140px;
-		bottom: 2em;
+// 		&__title,
+// 		&__paragraph-one,
+// 		&__paragraph-two {
+// 			margin: 0;
+// 			font-size: 1.6rem;
+// 			position: relative;
+// 			top: 2em;
+// 		}
+// 		&__paragraph-one {
+// 			top: 3em;
+// 		}
+// 		&__paragraph-two {
+// 			top: 4em;
+// 		}
+// 	}
+// 	.coop-btn {
+// 		height: 60px;
+// 		width: 140px;
+// 		bottom: 2em;
 
-		&__text {
-			font-size: 1.8rem;
-		}
-	}
-}
-@media (min-width:320px){
-	.coop-btn {
-		bottom: 2em;
-}
-}
+// 		&__text {
+// 			font-size: 1.8rem;
+// 		}
+// 	}
+// }
+// @media (min-width: 320px) {
+// 	.coop-btn {
+// 		bottom: 2em;
+// 	}
+// }
 
-@media (min-width: 576px) {
-	.outside {
-		top: 20em;
-		width: 500px;
-		height: 500px;
-	}
-	.inside {
-		.my-photo {
-			top: 15.5em;
-			width: 400px;
-			height: 400px;
-		}
-	}
-	.header {
-		position: relative;
-		&__title {
-			font-size: 4.6rem;
-			top: 0;
-		}
-		&__paragraph-one {
-			font-size: 3.6rem;
-			top: 1em;
-			font-weight: 300;
-		}
-		&__paragraph-two {
-			font-size: 2.7rem;
-		}
-	}
-	.coop-btn {
-		bottom: 4em;
-		width: 300px;
-		height: 85px;
-		&__text {
-			font-size: 2.8rem;
-		}
-	}
-}
+// @media (min-width: 576px) {
+// 	.outside {
+// 		top: 20em;
+// 		width: 500px;
+// 		height: 500px;
+// 	}
+// 	.inside {
+// 		.my-photo {
+// 			top: 15.5em;
+// 			width: 400px;
+// 			height: 400px;
+// 		}
+// 	}
+// 	.header {
+// 		position: relative;
+// 		&__title {
+// 			font-size: 4.6rem;
+// 			top: 0;
+// 		}
+// 		&__paragraph-one {
+// 			font-size: 3.6rem;
+// 			top: 1em;
+// 			font-weight: 300;
+// 		}
+// 		&__paragraph-two {
+// 			font-size: 2.7rem;
+// 		}
+// 	}
+// 	.coop-btn {
+// 		bottom: 4em;
+// 		width: 300px;
+// 		height: 85px;
+// 		&__text {
+// 			font-size: 2.8rem;
+// 		}
+// 	}
+// }
 
-@media (min-width: 768px) {
-	.nav {
-		&__item {
-			font-size: 3.6rem;
-		}
-	}
-	.outside {
-		top: 17em;
-		width: 450px;
-		height: 450px;
-	}
-	.inside {
-		.my-photo {
-			width: 350px;
-			height: 350px;
-			top: 14em;
-		}
-	}
-	.header {
-		position: relative;
-		top: 13em;
-		&__title {
-			font-size: 3.4rem;
-		}
-		&__paragraph-one,
-		&__paragraph-two {
-			font-size: 2.8rem;
-			font-weight: 100;
-		}
-	}
-	.coop-btn {
-		height: 100px;
-		width: 300px;
-		bottom: 1em;
-	}
-}
+// @media (min-width: 768px) {
+// 	.nav {
+// 		&__item {
+// 			font-size: 3.6rem;
+// 		}
+// 	}
+// 	.outside {
+// 		top: 17em;
+// 		width: 450px;
+// 		height: 450px;
+// 	}
+// 	.inside {
+// 		.my-photo {
+// 			width: 350px;
+// 			height: 350px;
+// 			top: 14em;
+// 		}
+// 	}
+// 	.header {
+// 		position: relative;
+// 		top: 13em;
+// 		&__title {
+// 			font-size: 3.4rem;
+// 		}
+// 		&__paragraph-one,
+// 		&__paragraph-two {
+// 			font-size: 2.8rem;
+// 			font-weight: 100;
+// 		}
+// 	}
+// 	.coop-btn {
+// 		height: 100px;
+// 		width: 300px;
+// 		bottom: 1em;
+// 	}
+// }
 
 @media (min-width: 992px) {
 	.burger-btn {
@@ -451,25 +470,67 @@ body {
 		.my-photo {
 			width: 550px;
 			height: 550px;
-			top: 22em;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
 		}
+	}
+	.coop-btn{
+		transform: translate(-50%, 300%);
 	}
 
 	.header {
-		top: -20em;
-		left: -25em;
+		left: 50%;
+		transform: translateX(-65%);
 		&__title {
-			font-size: 3.6rem;
+			font-size: 4.6rem;
+			font-family: 'Montserrat', sans-serif;
+			padding-bottom: .5em;
+		}
+		
+		&__paragraph-two {
+			margin-left: 2em;
 		}
 		&__paragraph-two {
 			margin-left: 2em;
 		}
 	}
-}
+	.about {
+		top: 45em;
+		display: flex;
+		position: relative;
+		&__title {
+			font-size: 7.6rem;
+			top: 1em;
+			position: absolute;
+			align-items: center;
+			color: $font-color;
+		}
+		&__photo{
+			position: absolute;
+			left: 15em;
+		}
+		&__text-box{
+		position: absolute;
+		display: block;
+		padding: 2em;
+		transform: translate(18%, 15%);
+		height: 700px;
+		width: 1200px;
+		}
+		&__text{
+			position: relative;
+			font-size: 3.6rem;
+			padding: 0;
+			margin: 0;
+		}
 
-.about{
-	top: 45em;
-	&__title{
-		top: -2em;
+		.cv-btn{
+			position: absolute;
+			width: 300px;
+			top: 60em;
+		}		
+		
 	}
 }
+
