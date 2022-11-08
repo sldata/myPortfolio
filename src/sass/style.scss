@@ -25,7 +25,7 @@ body {
 	width: 100%;
 	margin: 0 auto;
 	max-width: 2560px;
-	height: auto;
+	height: 8em;
 }
 // Navigation
 
@@ -197,7 +197,8 @@ body {
 		position: absolute;
 		display: flex;
 		left: 50%;
-		transform: translate(-50%);
+		top: 50%;
+		transform: translate(-50%, -50%);
 		object-fit: cover;
 		object-position: 0 0;
 		width: 200px;
@@ -210,6 +211,7 @@ body {
 	top: 35em;
 	height: 0;
 	width: 100%;
+	
 
 	&__title {
 		text-align: center;
@@ -223,7 +225,7 @@ body {
 	}
 	&__paragraph-two {
 		text-align: center;
-		font-size: 2rem;
+		// font-size: rem;
 	}
 }
 
@@ -261,34 +263,49 @@ body {
 	align-items: center;
 	text-align: center;
 	background-color: $pure-white;
-	height: 100vh;
+	height: 80em;
 	width: 100%;
-	position: absolute;
-	top: 77em;
-	overflow: hidden;
+	position: relative;
+	top: 50em;
+	
 	&__title {
+		position: absolute;
+		top: 1em;
 		padding-bottom: 1em;
 		text-align: center;
 		font-size: 3em;
 		font-weight: bold;
 	}
 	&__photo {
-		max-height: 100%;
-		max-width: 400px;
+		position: absolute;
+		top: 10em;
+		max-height: 36%;
+		max-width: 70%;
+		
+	}
+	&__text-box{
+		width: 100%;
+		top: 38em;
+		height: 350px;
+		padding-top: 1.8em;
+		position: absolute;
 	}
 	&__text {
 		font-family: 'Roboto', sans-serif;
-		margin: 0 2em;
-		padding: 2em;
+		position: relative;
+		color: $font-color;
+		margin: 0 1em;
 		font-size: 2rem;
 		font-weight: bold;
-		text-align: left;
+		text-align: center;
+		
+		
 	}
 	.cv-btn {
 		position: absolute;
 		height: 100px;
 		width: 200px;
-		top: 80em;
+		top: 65em;
 		left: 50%;
 		transform: translate(-50%);
 		background-color: $main-color;
@@ -313,140 +330,100 @@ body {
 
 // Media
 
-// @media (min-width: 280px) {
-// 	.nav {
-// 		&--active {
-// 			overflow: hidden;
-// 		}
-// 	}
-// 	.navbar-brand {
-// 		margin-left: 0 !important;
-// 	}
 
-// 	.outside {
-// 		transform: translate(-50%, -30%);
-// 		width: 200px;
-// 		height: 200px;
-// 	}
-// 	.inside {
-// 		.my-photo {
-// 			width: 150px;
-// 			height: 150px;
-// 			top: 6.4em;
-// 			transform: translate(-50%, -50%);
-// 		}
-// 	}
-// 	.header {
-// 		position: absolute;
-// 		top: 20em;
-// 		height: 0;
-// 		width: 100%;
+@media (min-width: 576px) {
+	.outside {
+		top: 10em;
+		width: 500px;
+		height: 500px;
+	}
+	.inside {
+		.my-photo {
+			top: 15.5em;
+			width: 400px;
+			height: 400px;
+		}
+	}
+	.header {
+		position: absolute;
+		top: 50em;
+		&__title {
+			font-size: 4.6rem;
+			top: 0;
+		}
+		&__paragraph-one {
+			font-size: 3.6rem;
+			top: 1em;
+			font-weight: 300;
+		}
+		&__paragraph-two {
+			font-size: 2.7rem;
+		}
+	}
+	.coop-btn {
+		top: 70em;
+		width: 300px;
+		height: 85px;
+		&__text {
+			font-size: 2.8rem;
+		}
+	}
+}
 
-// 		&__title,
-// 		&__paragraph-one,
-// 		&__paragraph-two {
-// 			margin: 0;
-// 			font-size: 1.6rem;
-// 			position: relative;
-// 			top: 2em;
-// 		}
-// 		&__paragraph-one {
-// 			top: 3em;
-// 		}
-// 		&__paragraph-two {
-// 			top: 4em;
-// 		}
-// 	}
-// 	.coop-btn {
-// 		height: 60px;
-// 		width: 140px;
-// 		bottom: 2em;
+@media (min-width: 768px) {
+	.nav {
+		&__item {
+			font-size: 4rem;
+		}
+	}
+	.outside {
+		top: 11em;
+		width: 450px;
+		height: 450px;
+	}
+	.inside {
+		.my-photo {
+			width: 350px;
+			height: 350px;
+			top: 14em;
+		}
+	}
+	.header {
+		position: relative;
+		top: 15em;
+		&__title {
+			font-size: 3.4rem;
+		}
+		&__paragraph-one,
+		&__paragraph-two {
+			font-size: 2.8rem;
+			font-weight: 100;
+		}
+	}
+	.coop-btn {
+		position: absolute;
+		height: 100px;
+		width: 300px;
+		top: 65em;
+	}
 
-// 		&__text {
-// 			font-size: 1.8rem;
-// 		}
-// 	}
-// }
-// @media (min-width: 320px) {
-// 	.coop-btn {
-// 		bottom: 2em;
-// 	}
-// }
-
-// @media (min-width: 576px) {
-// 	.outside {
-// 		top: 20em;
-// 		width: 500px;
-// 		height: 500px;
-// 	}
-// 	.inside {
-// 		.my-photo {
-// 			top: 15.5em;
-// 			width: 400px;
-// 			height: 400px;
-// 		}
-// 	}
-// 	.header {
-// 		position: relative;
-// 		&__title {
-// 			font-size: 4.6rem;
-// 			top: 0;
-// 		}
-// 		&__paragraph-one {
-// 			font-size: 3.6rem;
-// 			top: 1em;
-// 			font-weight: 300;
-// 		}
-// 		&__paragraph-two {
-// 			font-size: 2.7rem;
-// 		}
-// 	}
-// 	.coop-btn {
-// 		bottom: 4em;
-// 		width: 300px;
-// 		height: 85px;
-// 		&__text {
-// 			font-size: 2.8rem;
-// 		}
-// 	}
-// }
-
-// @media (min-width: 768px) {
-// 	.nav {
-// 		&__item {
-// 			font-size: 3.6rem;
-// 		}
-// 	}
-// 	.outside {
-// 		top: 17em;
-// 		width: 450px;
-// 		height: 450px;
-// 	}
-// 	.inside {
-// 		.my-photo {
-// 			width: 350px;
-// 			height: 350px;
-// 			top: 14em;
-// 		}
-// 	}
-// 	.header {
-// 		position: relative;
-// 		top: 13em;
-// 		&__title {
-// 			font-size: 3.4rem;
-// 		}
-// 		&__paragraph-one,
-// 		&__paragraph-two {
-// 			font-size: 2.8rem;
-// 			font-weight: 100;
-// 		}
-// 	}
-// 	.coop-btn {
-// 		height: 100px;
-// 		width: 300px;
-// 		bottom: 1em;
-// 	}
-// }
+	.about{
+		&__title{
+			font-size: 6rem;
+		}
+	
+		&__text-box{
+			padding-top: 5em;
+		}
+		&__text{
+			font-size: 1.8em;
+		}
+		.cv-btn{
+			width: 300px;
+			height: 100px;
+		}
+	}
+}
 
 @media (min-width: 992px) {
 	.burger-btn {
