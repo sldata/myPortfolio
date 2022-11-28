@@ -148,28 +148,32 @@ body {
 	box-shadow: 0 0 30px rgba(255, 0, 0, 25%);
 	.navbar-nav {
 		margin-top: 0.5em;
+		
 	}
 	.nav-link {
 		display: flex;
 		font-size: 2.4rem;
 		padding: 0 1em;
-		margin: 0 1em;
+		margin-left:  1em;
 		color: $main-color;
 		transition: color 0.3s;
+		
 	}
 	.nav-link:hover {
 		color: $font-color;
-	}
 
+	}
+	
 	.navbar-brand {
 		color: $main-color;
 		transition: color 0.3s;
+		
 		margin-left: 2em;
 		h3 {
 			font-size: 2.4rem;
 			font-weight: bold;
 			margin-top: 0.5em;
-
+			
 			margin-left: 0.5em;
 		}
 	}
@@ -225,7 +229,7 @@ body {
 	}
 	&__paragraph-two {
 		text-align: center;
-		// font-size: rem;
+		
 	}
 }
 
@@ -326,6 +330,17 @@ body {
 			text-decoration: none;
 		}
 	}
+}
+
+// SKILLS SECTION
+
+.section-one{
+	width: 100%;
+	height: 50vh;
+	background-color: red;
+	position: absolute;
+	top: 168em;
+	background-color: $background-color;
 }
 
 // Media
@@ -430,6 +445,7 @@ body {
 		display: none;
 	}
 	.coop-btn {
+		
 		height: 100px;
 		width: 300px;
 		bottom: 5em;
@@ -438,6 +454,7 @@ body {
 
 @media (min-width: 1300px) {
 	.outside {
+		position: relative;
 		top: 20em;
 		left: 70%;
 		width: 700px;
@@ -453,15 +470,16 @@ body {
 		}
 	}
 	.coop-btn{
-		transform: translate(-50%, 300%);
+		transform: translate(-50%, 200%);
+		
 	}
-
+	
 	.header {
-		left: 50%;
-		transform: translateX(-65%);
+		position: relative;
+		top: 0;
+		left: -25%;
 		&__title {
-			font-size: 4.6rem;
-			font-family: 'Montserrat', sans-serif;
+			font-size: 3.6rem;
 			padding-bottom: .5em;
 		}
 		
@@ -484,28 +502,40 @@ body {
 			color: $font-color;
 		}
 		&__photo{
-			position: absolute;
-			left: 15em;
+			position: relative;
+			min-width: 500px;
+			margin-left: 9em;
+			min-height: 800px;
+			left: -12em;
+			top: 0em;
 		}
 		&__text-box{
-		position: absolute;
-		display: block;
+		position: relative;
 		padding: 2em;
-		transform: translate(18%, 15%);
+		top: 2em;
+		margin-top: 1em;
+		overflow: hidden;
+		left: 0;
+		transform: translateX(0%);
 		height: 700px;
-		width: 1200px;
+		max-width: 1200px;
+	
+		
 		}
 		&__text{
-			position: relative;
+			text-align: left;
 			font-size: 3.6rem;
 			padding: 0;
 			margin: 0;
+			
 		}
 
 		.cv-btn{
 			position: absolute;
+						
+			transform: translate(50%, -100%);
 			width: 300px;
-			top: 60em;
+			
 		}		
 		
 	}
