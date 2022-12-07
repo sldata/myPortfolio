@@ -28,3 +28,28 @@ const closeNavigation = () => {
 }
 
 burgerBtn.addEventListener('click', showNavigation)
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const skills = document.querySelectorAll('.skill');
+	skills.forEach((skill) => {
+		const skillBtn = skill.querySelector('.skill-title-box');
+		const skillContent = skill.querySelector('.skill-content');
+		const skillArrow = skill.querySelector('.title-right');
+		const itemBars = skill.querySelectorAll('.item-bar');
+		skillBtn.addEventListener('click', () => {
+			itemBars.forEach((bar) => {
+				setTimeout(() => {
+					bar.classList.toggle('active-bar');
+				}, 100);
+			});
+			if (skillContent.style.maxHeight) {
+				skillContent.style.maxHeight = null;
+				skillArrow.style.transform = 'rotate(0)';
+			} else {
+				skillContent.style.maxHeight = skillContent.scrollHeight + 'px';
+				skillArrow.style.transform = 'rotate(180deg)';
+			}
+		});
+	});
+});
