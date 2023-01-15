@@ -214,6 +214,7 @@ body {
 	width: 100%;
 
 	&__title {
+		text-transform: uppercase;
 		text-align: center;
 		font-weight: bold;
 		font-size: 2rem;
@@ -274,6 +275,7 @@ body {
 		text-align: center;
 		font-size: 3em;
 		font-weight: bold;
+		text-transform: uppercase;
 	}
 	&__photo {
 		position: absolute;
@@ -342,6 +344,7 @@ h2 {
 	top: -7.5em;
 	position: absolute;
 	font-weight: 700;
+	text-transform: uppercase;
 }
 .skill {
 	margin-bottom: 15px;
@@ -364,6 +367,7 @@ h2 {
 	padding: 0 24px;
 	cursor: pointer;
 }
+
 .title-left {
 	display: flex;
 	align-items: center;
@@ -379,6 +383,8 @@ h2 {
 	font-weight: 700;
 }
 .title-right {
+	position: absolute;
+	right: 0;
 	transition: all 0.3s;
 }
 .title-right i {
@@ -528,10 +534,8 @@ h2 {
 
 .card-two {
 	top: 46em;
-	
 }
 .icon-two {
-	
 	background-color: #ffce21;
 }
 
@@ -540,6 +544,30 @@ h2 {
 }
 .icon-three {
 	background-color: #29f5a6;
+}
+// PROJECTS SECTION
+.projects-section {
+	top: 330em;
+	background-color: $background-color;
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	
+	
+}
+.projects-title{
+	top: 2em;
+}
+
+.projects-info {
+	position: absolute;
+	width: 100%;
+	top: 8em;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 4rem;
+	padding-bottom: 2em;
 }
 
 // Media
@@ -640,11 +668,11 @@ h2 {
 			height: 100px;
 		}
 	}
+	.skills-section {
+		top: 180em;
+	}
 }
 
-.skills-section {
-	top: 180em;
-}
 
 @media (min-width: 992px) {
 	.burger-btn {
@@ -655,18 +683,31 @@ h2 {
 		width: 300px;
 		bottom: 5em;
 	}
+	.services-section {
+		height: 100vh;
+	}
 
-	.services-title{
+	.services-title {
 		top: 2em;
 		font-size: 6rem;
 	}
 
-	.card  {
+	.card {
 		position: relative;
 		top: 16em;
 		margin: 2em;
 		height: 29em;
 	}
+
+	.projects-section{
+		top: 280em;
+	}
+	.projects-title{
+		
+		top: 0em;
+		font-size: 6rem;
+	}
+	
 }
 
 @media (min-width: 1300px) {
@@ -761,8 +802,9 @@ h2 {
 		top: -4em;
 		font-size: 6rem;
 	}
-	.card{
+	.card {
 		width: 20em;
 		margin: 6em;
 	}
+
 }
