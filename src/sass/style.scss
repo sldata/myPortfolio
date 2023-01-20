@@ -552,10 +552,8 @@ h2 {
 	position: relative;
 	width: 100%;
 	height: 50vh;
-	
-	
 }
-.projects-title{
+.projects-title {
 	top: 2em;
 }
 
@@ -568,6 +566,77 @@ h2 {
 	text-align: center;
 	font-size: 4rem;
 	padding-bottom: 2em;
+}
+
+// CONTACT SECTION
+
+.contact-section {
+	height: 70vh;
+	width: 100%;
+	top: 330em;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-image: url('../img/programming_small.jpg');
+}
+.contact-title {
+	top: 3em;
+	color: $pure-white;
+}
+.contact-shadow {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 70vh;
+}
+.form-box {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	top: 15em;
+	max-width: 1300px;
+}
+.form-name {
+	width: 90%;
+	height: 3em;
+	margin-bottom: 1em;
+}
+.form-email {
+	width: 90%;
+	height: 3em;
+	margin-bottom: 1em;
+}
+.form-subject {
+	width: 90%;
+	height: 3em;
+}
+.form-message {
+	width: 90%;
+	margin-top: 1em;
+	min-height: 150px;
+	max-height: 180px;
+}
+.form-btn {
+	margin-top: 1em;
+	padding: 1em;
+	width: 200px;
+	border-radius: 4px;
+	font-size: 1.4em;
+	color: $pure-white;
+	text-transform: uppercase;
+	transition: all 1s;
+	border-color: $pure-white;
+	background-color: #861657;
+	background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+}
+
+.form-btn:hover {
+	background-image: none;
+	border-color: $font-color;
+	background-color: $main-color;
+	color: $font-color;
 }
 
 // Media
@@ -673,7 +742,6 @@ h2 {
 	}
 }
 
-
 @media (min-width: 992px) {
 	.burger-btn {
 		display: none;
@@ -699,15 +767,16 @@ h2 {
 		height: 29em;
 	}
 
-	.projects-section{
+	.projects-section {
 		top: 280em;
 	}
-	.projects-title{
-		
+	.projects-title {
 		top: 0em;
 		font-size: 6rem;
 	}
-	
+	.contact {
+		background-image: url('../img/programming_big.jpg');
+	}
 }
 
 @media (min-width: 1300px) {
@@ -806,5 +875,4 @@ h2 {
 		width: 20em;
 		margin: 6em;
 	}
-
 }
