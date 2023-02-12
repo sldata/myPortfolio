@@ -337,7 +337,7 @@ body {
 	width: 100%;
 }
 h2 {
-	font-size: 4rem;
+	font-size: 3.6rem;
 	color: $font-color;
 	text-align: center;
 	width: 100%;
@@ -571,9 +571,9 @@ h2 {
 // CONTACT SECTION
 
 .contact-section {
-	height: 70vh;
+	height: 150vh;
 	width: 100%;
-	top: 330em;
+	top: 350em;
 	position: relative;
 	background-size: cover;
 	background-position: center;
@@ -587,7 +587,7 @@ h2 {
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.6);
 	width: 100%;
-	height: 70vh;
+	height: 100%;
 }
 .form-box {
 	position: absolute;
@@ -596,18 +596,14 @@ h2 {
 	width: 100%;
 	align-items: center;
 	top: 15em;
-	max-width: 1300px;
 }
-.form-name {
-	width: 90%;
-	height: 3em;
-	margin-bottom: 1em;
-}
+.form-name,
 .form-email {
 	width: 90%;
 	height: 3em;
 	margin-bottom: 1em;
 }
+
 .form-subject {
 	width: 90%;
 	height: 3em;
@@ -637,6 +633,24 @@ h2 {
 	border-color: $font-color;
 	background-color: $main-color;
 	color: $font-color;
+}
+
+.footer-section {
+	height: 5em;
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	bottom: 0;
+}
+.footer-text {
+	position: absolute;
+	flex-wrap: wrap;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: $main-color;
+	font-weight: bold;
 }
 
 // Media
@@ -681,6 +695,10 @@ h2 {
 	.skills-section {
 		padding-top: 5em;
 		width: 75%;
+	}
+	.contact-section {
+		top: 330em;
+		height: 80vh;
 	}
 }
 
@@ -774,7 +792,7 @@ h2 {
 		top: 0em;
 		font-size: 6rem;
 	}
-	.contact {
+	.contact-section {
 		background-image: url('../img/programming_big.jpg');
 	}
 }
@@ -874,5 +892,10 @@ h2 {
 	.card {
 		width: 20em;
 		margin: 6em;
+	}
+	.form-box {
+		max-width: 1200px;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
